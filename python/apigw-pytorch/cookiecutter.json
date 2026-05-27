@@ -3,6 +3,7 @@
   "pytorch_version": "2.6.0",
   "torchvision_version": "0.21.0",
   "api_path": "/classify_digit",
+  "runtime": ["python3.9", "python3.10", "python3.11", "python3.12", "python3.13", "python3.14"],
   "architectures": {
     "value": [
       "x86_64", "arm64"
