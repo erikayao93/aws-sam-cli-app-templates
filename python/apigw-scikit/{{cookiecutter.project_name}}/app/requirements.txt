@@ -1,0 +1,2 @@
+scikit-learn=={{cookiecutter.options[cookiecutter.runtime].scikit_learn_version}}
+pillow
