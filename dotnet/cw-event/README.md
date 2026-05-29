@@ -1,4 +1,4 @@
-# Cookiecutter .NET 8 CloudWatch Events Quick Start Application
+# Cookiecutter .NET CloudWatch Events Quick Start Application
 
 A cookiecutter template to create a .NET Core CloudWatch Events Quick Start Application using [Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model).
 

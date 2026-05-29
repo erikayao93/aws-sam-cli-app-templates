@@ -1,0 +1,27 @@
+{
+    "project_name": "Name of the project",
+    "runtime": ["dotnet6", "dotnet8", "dotnet10"],
+    "architectures": {
+        "value": [
+            "x86_64", "arm64"
+        ]
+    },
+    "options": {
+      "dotnet6": {
+        "framework": "net6.0",
+        "memory-size": 256
+      },
+      "dotnet8": {
+        "framework": "net8.0",
+        "memory-size": 512
+      },
+      "dotnet10": {
+        "framework": "net10.0",
+        "memory-size": 512
+      }
+    },
+    "_copy_without_render": [
+        ".gitignore"
+    ]
+
+}

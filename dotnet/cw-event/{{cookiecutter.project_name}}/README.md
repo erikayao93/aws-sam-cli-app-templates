@@ -84,8 +84,8 @@ Resources:
       Description: A Lambda function that logs the payload of messages from a scheduled CloudWatch Event
       CodeUri: ./src/lambdaEvent/
       Handler: lambdaEvent::lambdaEvent.Function::FunctionHandler
-      Runtime: dotnet6
-      MemorySize: 256
+      Runtime: {{cookiecutter.runtime}}
+      MemorySize: {{cookiecutter.options[cookiecutter.runtime].memory-size}}
       Timeout: 100
       # This property associates this Lambda function with a scheduled CloudWatch Event. For all available properties, see
       # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#schedule
