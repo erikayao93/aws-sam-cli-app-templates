@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS TypeScript Durable Function Hello wor
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 22**: `sam init --runtime nodejs22.x`
+* **NodeJS 24**: `sam init --runtime {{cookiecutter.runtime}}`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name (`sam-app` is the default)
 
