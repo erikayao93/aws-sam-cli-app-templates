@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS CloudWatch Events Quick Start Applica
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 24**: `sam init --runtime nodejs24.x --app-template quick-start-cloudwatch-events --name cwe-app`
+* **NodeJS 24**: `sam init --runtime {{ cookiecutter.runtime }} --app-template quick-start-cloudwatch-events --name cwe-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 

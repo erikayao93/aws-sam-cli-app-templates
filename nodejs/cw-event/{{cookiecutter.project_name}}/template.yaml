@@ -21,7 +21,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Description: A Lambda function that logs the payload of messages sent to an associated SQS queue.
-      Runtime: nodejs20.x
+      Runtime: {{cookiecutter.runtime}}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
