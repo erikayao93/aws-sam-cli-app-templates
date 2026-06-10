@@ -23,7 +23,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/handlers/hello-from-lambda.helloFromLambdaHandler
-      Runtime: nodejs20.x
+      Runtime: {{cookiecutter.runtime}}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
