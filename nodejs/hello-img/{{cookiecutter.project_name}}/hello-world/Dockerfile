@@ -1,4 +1,4 @@
-FROM public.ecr.aws/lambda/nodejs:24
+FROM public.ecr.aws/lambda/nodejs:{{cookiecutter.options[cookiecutter.runtime].version}}
 
 COPY app.mjs package*.json ./
 
