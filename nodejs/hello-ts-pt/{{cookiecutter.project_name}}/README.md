@@ -1,6 +1,6 @@
 # {{ cookiecutter.project_name }}
 
-Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `nodejs20.x` runtime, and options to bootstrap it with [**Powertools for AWS Lambda (TypeScript)**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
+Congratulations, you have just created a Serverless "Hello World" application using the AWS Serverless Application Model (AWS SAM) for the `{{cookiecutter.runtime}}` runtime, and options to bootstrap it with [**Powertools for AWS Lambda (TypeScript)**](https://awslabs.github.io/aws-lambda-powertools-typescript/latest/) (Lambda Powertools) utilities for Logging, Tracing and Metrics.
 
 Powertools for AWS Lambda (TypeScript) is a developer toolkit to implement Serverless best practices and increase developer velocity.
 
@@ -85,7 +85,7 @@ The Serverless Application Model Command Line Interface (SAM CLI) is an extensio
 To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* Node.js - [Install Node.js 20](https://nodejs.org/en/), including the NPM package management tool.
+* Node.js - [Install Node.js {{cookiecutter.options[cookiecutter.runtime].version}}](https://nodejs.org/en/), including the NPM package management tool.
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
 
 To build and deploy your application for the first time, run the following in your shell:

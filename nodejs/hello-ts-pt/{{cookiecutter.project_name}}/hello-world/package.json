@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "hello world sample for NodeJS",
   "main": "app.js",
-  "repository": "https://github.com/aws/aws-sam-cli-app-templates/tree/master/nodejs24.x/hello-ts-pt",
+  "repository": "https://github.com/aws/aws-sam-cli-app-templates/tree/master/nodejs/hello-ts-pt",
   "author": "SAM CLI",
   "license": "MIT",
   "dependencies": {

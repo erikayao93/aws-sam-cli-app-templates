@@ -17,7 +17,7 @@ Resources:
     Properties:
       CodeUri: hello-world/
       Handler: app.lambdaHandler
-      Runtime: nodejs24.x
+      Runtime: {{cookiecutter.runtime}}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
