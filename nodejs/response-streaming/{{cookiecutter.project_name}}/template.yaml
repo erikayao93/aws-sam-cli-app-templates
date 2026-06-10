@@ -10,7 +10,7 @@ Resources:
     Properties:
       CodeUri: src/
       Handler: index.handler
-      Runtime: nodejs20.x
+      Runtime: {{cookiecutter.runtime}}
       {%- if cookiecutter.architectures.value != []%}
       Architectures:
       {%- for arch in cookiecutter.architectures.value %}
