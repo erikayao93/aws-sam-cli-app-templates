@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS SQS Quick Start Application using [Se
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 20**: `sam init --runtime nodejs20.x --app-template quick-start-sqs --name sqs-app`
+* **NodeJS {{cookiecutter.options[cookiecutter.runtime].version}}**: `sam init --runtime {{cookiecutter.runtime}} --app-template quick-start-sqs --name sqs-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 
