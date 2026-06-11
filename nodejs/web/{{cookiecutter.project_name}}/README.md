@@ -33,7 +33,7 @@ The AWS SAM CLI is an extension of the AWS CLI that adds functionality for build
 To use the AWS SAM CLI, you need the following tools:
 
 * AWS SAM CLI - [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
-* Node.js - [Install Node.js 22](https://nodejs.org/en/), including the npm package management tool.
+* Node.js - [Install Node.js {{cookiecutter.options[cookiecutter.runtime].version}}](https://nodejs.org/en/), including the npm package management tool.
 * Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community).
 
 To build and deploy your application for the first time, run the following in your shell:
@@ -65,11 +65,27 @@ The AWS SAM CLI installs dependencies that are defined in `package.json`, create
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
+Update the env.json file to include the physical ID of the DynamoDB table
+
+```
+{
+    "getAllItemsFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    },
+    "getByIdFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    },
+    "putItemFunction": {
+        "SAMPLE_TABLE": "<mystack-mytable>"
+    }
+  }
+```
+
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-my-application$ sam local invoke putItemFunction --event events/event-post-item.json
-my-application$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json
+my-application$ sam local invoke putItemFunction --event events/event-post-item.json --env-vars env.json
+my-application$ sam local invoke getAllItemsFunction --event events/event-get-all-items.json --env-vars env.json
 ```
 
 The AWS SAM CLI can also emulate your application's API. Use the `sam local start-api` command to run the API locally on port 3000.
@@ -90,6 +106,31 @@ The AWS SAM CLI reads the application template to determine the API's routes and
             Method: GET
 ```
 
+## Test locally with dynamodb:
+1. Start DynamoDB Local in a Docker container (this example works on codespace) 
+```
+docker run --rm -p 8000:8000 -v /tmp:/data amazon/dynamodb-local
+```
+2. Run the following commands to start the sam local api:
+```
+sam local start-api --env-vars env.json --host 0.0.0.0 --debug
+```
+3. Create the local DynamoDB table (sample command below): 
+```
+aws dynamodb create-table --table-name SampleTable --attribute-definitions AttributeName=id,AttributeType=S --key-schema AttributeName=id,KeyType=HASH --billing-mode PAY_PER_REQUEST --endpoint-url http://127.0.0.1:8000
+```
+4. For testing - you can put an item into dynamodb local
+```
+aws dynamodb put-item \
+    --table-name SampleTable \
+    --item '{"id": {"S": "A1234"}, "name": {"S": "randeepx"}}' \
+    --endpoint-url http://127.0.0.1:8000
+```
+5. Scan your table to check for the item you just inserted
+```
+aws dynamodb scan --table-name SampleTable --endpoint-url http://127.0.0.1:8000
+```
+
 ## Add a resource to your application
 The application template uses AWS SAM to define application resources. AWS SAM is an extension of AWS CloudFormation with a simpler syntax for configuring common serverless application resources, such as functions, triggers, and APIs. For resources that aren't included in the [AWS SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use the standard [AWS CloudFormation resource types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
 
@@ -103,7 +144,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: src/handlers/get-all-items.getAllItemsHandler
-      Runtime: nodejs22.x
+      Runtime: {{cookiecutter.runtime}}
       DeadLetterQueue:
         Type: SQS 
         TargetArn: !GetAtt MyQueue.Arn
