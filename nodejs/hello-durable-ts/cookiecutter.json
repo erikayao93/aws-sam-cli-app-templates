@@ -1,6 +1,6 @@
 {
     "project_name": "Name of the project",
-    "runtime": ["nodejs.22.x", "nodejs24.x"],
+    "runtime": ["nodejs22.x", "nodejs24.x"],
     "architectures": {
         "value": ["x86_64", "arm64"]
     },
@@ -14,5 +14,6 @@
     },
     "_copy_without_render": [
         ".gitignore"
-    ]
+    ],
+    "__stack_name": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
 }

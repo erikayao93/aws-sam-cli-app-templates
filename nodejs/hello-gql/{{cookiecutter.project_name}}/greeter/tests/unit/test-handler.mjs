@@ -3,7 +3,7 @@
 import { lambdaHandler } from "../../app.mjs";
 import { expect } from "chai";
 
-import event from "../events/appsync.json" assert { type: "json" };
+import event from "../events/appsync.json" with { type: "json" };
 
 const context = {};
 
