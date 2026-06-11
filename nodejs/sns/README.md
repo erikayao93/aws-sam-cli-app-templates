@@ -10,7 +10,7 @@ A cookiecutter template to create a NodeJS SNS Quick Start Application using [Se
 
 Generate a boilerplate template in your current project directory using the following syntax:
 
-* **NodeJS 22**: `sam init --runtime nodejs22.x --app-template quick-start-sns --name sns-app`
+* **NodeJS {{cookiecutter.options[cookiecutter.runtime].version}}**: `sam init --runtime {{cookiecutter.runtime}} --app-template quick-start-sns --name sns-app`
 
 > **NOTE**: ``--name`` allows you to specify a different project folder name
 
