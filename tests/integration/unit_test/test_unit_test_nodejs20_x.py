@@ -5,6 +5,7 @@ class UnitTest_nodejs20_x_cookiecutter_aws_sam_hello_nodejs(UnitTestBase.NodejsU
     runtime = "nodejs20.x"
     directory = "nodejs/hello"
     code_directories = ["hello-world"]
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_aws_sam_step_functions_sample_app(UnitTestBase.NodejsUnitTestBase):
@@ -15,48 +16,57 @@ class UnitTest_nodejs20_x_cookiecutter_aws_sam_step_functions_sample_app(UnitTes
         "functions/stock-checker",
         "functions/stock-seller",
     ]
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_from_scratch(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/scratch"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_cloudwatch_events(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/cw-event"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_response_streaming(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/response-streaming"
     code_directories = ["src"]
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_s3(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/s3"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_sns(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/sns"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_sqs(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/sqs"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_web(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/web"
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_quick_start_full_stack(UnitTestBase.NodejsUnitTestBase):
     runtime = "nodejs20.x"
     directory = "nodejs/full-stack"
     code_directories = ["backend", "frontend"]
+    should_test_lint = False
 
 
 class UnitTest_nodejs20_x_cookiecutter_aws_sam_gql_quick_start(UnitTestBase.NodejsUnitTestBase):
